@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,13 +7,15 @@
 
 <title>Alyssa Gustafson | Marketing Strategy & Branding | Seattle & Everett</title>
 
-<meta name="description" content="Boutique marketing consultant helping businesses grow through branding, strategy, and digital marketing in Seattle, Everett, and the Pacific Northwest.">
+<meta name="description" content="Boutique marketing consulting helping businesses grow through branding, marketing strategy, and digital marketing in Seattle, Everett, and the Pacific Northwest.">
 
 <meta name="keywords" content="Seattle marketing consultant, Everett marketing consultant, branding consultant Seattle, boutique marketing agency Washington, marketing strategist Seattle">
 
 <meta name="author" content="Alyssa Gustafson">
 
 <style>
+
+/* GLOBAL */
 
 *{
 margin:0;
@@ -28,7 +29,7 @@ color:#111;
 line-height:1.6;
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav{
 display:flex;
@@ -73,7 +74,7 @@ cursor:pointer;
 }
 
 .hamburger span{
-width:25px;
+width:26px;
 height:3px;
 background:black;
 }
@@ -81,8 +82,9 @@ background:black;
 /* HERO */
 
 .hero{
-padding:140px 7vw 110px;
+padding:150px 7vw 120px;
 max-width:1000px;
+position:relative;
 }
 
 .hero h1{
@@ -94,38 +96,47 @@ margin-bottom:20px;
 font-size:20px;
 color:#555;
 margin-bottom:35px;
-max-width:600px;
+max-width:620px;
 }
 
 .hero-btn{
 background:black;
 color:white;
-padding:16px 30px;
+padding:16px 32px;
 border-radius:30px;
 font-weight:600;
 display:inline-block;
 }
 
-/* EXPLORE */
+/* SCROLL INDICATOR */
 
-.scroll-hint{
+.scroll-indicator{
 position:absolute;
+bottom:20px;
 left:50%;
 transform:translateX(-50%);
-bottom:40px;
 font-size:14px;
 color:#777;
+text-align:center;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
 padding:100px 7vw;
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.section.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 .section h2{
-margin-bottom:40px;
 font-size:32px;
+margin-bottom:40px;
 }
 
 /* SERVICES */
@@ -155,7 +166,7 @@ text-align:center;
 }
 
 .behance-btn{
-margin-top:20px;
+margin-top:25px;
 display:inline-block;
 background:black;
 color:white;
@@ -171,7 +182,7 @@ text-align:center;
 }
 
 .contact-btn{
-margin-top:20px;
+margin-top:25px;
 display:inline-block;
 background:black;
 color:white;
@@ -190,8 +201,8 @@ text-align:center;
 .socials{
 margin-top:18px;
 display:flex;
-gap:20px;
 justify-content:center;
+gap:20px;
 }
 
 /* MOBILE */
@@ -199,7 +210,7 @@ justify-content:center;
 @media (max-width:768px){
 
 .hero{
-padding:120px 9vw 100px;
+padding:120px 9vw 110px;
 }
 
 .hero h1{
@@ -278,7 +289,7 @@ z-index:999;
 
 <a href="#portfolio">Portfolio</a>
 
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=ag.cultivate@gmail.com&su=Marketing%20Inquiry">Contact</a>
+<a href="https://www.behance.net/alyssagustafson" target="_blank">Behance</a>
 
 <a class="nav-cta"
 href="https://mail.google.com/mail/?view=cm&fs=1&to=ag.cultivate@gmail.com&su=Marketing%20Inquiry">
@@ -295,6 +306,7 @@ Start a Project
 
 </nav>
 
+
 <section class="hero">
 
 <h1>Marketing Strategy & Brand Consulting</h1>
@@ -308,7 +320,10 @@ href="https://mail.google.com/mail/?view=cm&fs=1&to=ag.cultivate@gmail.com&su=Ma
 Start the Conversation
 </a>
 
+<div class="scroll-indicator">Explore ↓</div>
+
 </section>
+
 
 <section class="section" id="services">
 
@@ -328,25 +343,24 @@ Start the Conversation
 
 <div class="service-card">
 <h3>Content Strategy</h3>
-<p>Content systems that attract the right audience and convert them.</p>
+<p>Content systems that attract and convert the right audience.</p>
 </div>
 
 <div class="service-card">
 <h3>Digital Experience</h3>
-<p>UX-informed marketing and digital design that improves engagement.</p>
+<p>UX-informed marketing and digital design to improve engagement.</p>
 </div>
 
 </div>
 
 </section>
 
+
 <section class="section portfolio" id="portfolio">
 
 <h2>Portfolio</h2>
 
-<p>
-Explore Alyssa Gustafson's design and strategy work.
-</p>
+<p>View my marketing, UX, and design work.</p>
 
 <a class="behance-btn"
 href="https://www.behance.net/alyssagustafson"
@@ -355,6 +369,7 @@ View Behance Portfolio
 </a>
 
 </section>
+
 
 <section class="section contact">
 
@@ -371,6 +386,7 @@ Send an Email
 
 </section>
 
+
 <footer>
 
 <p>© 2026 AG Cultivate</p>
@@ -385,18 +401,36 @@ Send an Email
 
 </footer>
 
+
 <a class="mobile-cta"
 href="https://mail.google.com/mail/?view=cm&fs=1&to=ag.cultivate@gmail.com&su=Marketing%20Inquiry">
 Start a Project
 </a>
 
+
 <script>
+
+/* MOBILE NAV */
 
 const hamburger=document.querySelector(".hamburger")
 const nav=document.querySelector(".nav-links")
 
 hamburger.addEventListener("click",()=>{
 nav.classList.toggle("active")
+})
+
+/* SCROLL ANIMATION */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
+}
+})
+})
+
+document.querySelectorAll(".section").forEach(section=>{
+observer.observe(section)
 })
 
 </script>
