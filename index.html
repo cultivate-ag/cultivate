@@ -163,9 +163,12 @@
 
     /* MOBILE ≤768px */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+      /* NAV — simple stacked links, no hamburger */
+      .nav-links { display: flex; flex-direction: column; gap: 0.4rem; }
+      .nav-links a { font-size: 0.65rem; }
       .nav-cta { display: none; }
-      .hamburger { display: flex; }
+      .hamburger { display: none; }
+      .mobile-nav { display: none !important; }
       .hero { padding: 6rem 6vw 4rem; }
       .hero-wordmark { font-size: clamp(2.4rem, 11vw, 3.5rem); }
       .hero-tagline { font-size: clamp(1.3rem, 5vw, 1.8rem); }
@@ -173,22 +176,13 @@
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .services-grid { grid-template-columns: 1fr; }
       .services-grid .flip-card:nth-child(n) { grid-column: auto; }
-      /* Mobile flip: use show/hide instead of 3D transform */
-      .flip-card { height: auto; perspective: none; }
+      /* Cards — always show both front info and back deliverables, no flip needed */
+      .flip-card { height: auto; perspective: none; cursor: default; }
       .flip-inner { transform-style: flat; transition: none; height: auto; position: static; }
-      .flip-card:hover .flip-inner,
-      .flip-card.flipped .flip-inner { transform: none; }
-      .flip-front, .flip-back {
-        position: static;
-        backface-visibility: visible;
-        -webkit-backface-visibility: visible;
-        transform: none !important;
-        height: auto;
-        min-height: 240px;
-      }
-      .flip-back { display: none; }
-      .flip-card.flipped .flip-front { display: none; }
-      .flip-card.flipped .flip-back { display: flex; }
+      .flip-card:hover .flip-inner { transform: none; }
+      .flip-front { position: static; backface-visibility: visible; transform: none !important; height: auto; border-radius: 10px 10px 0 0; border-bottom: none; }
+      .flip-back { position: static; backface-visibility: visible; transform: none !important; height: auto; display: flex; border-radius: 0 0 10px 10px; border-top: none; }
+      .flip-hint { display: none; }
       .process-steps { grid-template-columns: 1fr; gap: 2rem; }
       .process-steps::before { display: none; }
       .testimonial-card { padding: 2rem 1.5rem; }
