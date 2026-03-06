@@ -49,16 +49,16 @@
     .mobile-nav-close svg { width: 100%; height: 100%; stroke-width: 1.5; }
 
     /* HERO */
-    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 8rem 10vw 5rem; position: relative; background: linear-gradient(145deg, var(--navy-dark) 0%, #0d1f30 60%, #172435 100%); overflow: hidden; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8rem 10vw 5rem; position: relative; background: linear-gradient(145deg, var(--navy-dark) 0%, #0d1f30 60%, #172435 100%); overflow: hidden; text-align: center; }
     .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 55vw; height: 55vw; background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%); pointer-events: none; }
-    .hero-logo-block { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 2.5rem; }
+    .hero-logo-block { display: flex; flex-direction: column; align-items: center; margin-bottom: 2.5rem; }
     .hero-wordmark { display: flex; align-items: baseline; font-family: 'Jost', sans-serif; font-size: clamp(3.2rem, 8vw, 5.8rem); font-weight: 300; letter-spacing: 0.28em; color: var(--white); text-transform: uppercase; line-height: 1; margin-bottom: 0.5rem; }
     .hero-i-wrap { position: relative; display: inline-block; }
     .hero-leaf { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); width: 0.38em; height: auto; margin-bottom: 0.08em; overflow: visible; display: block; }
     .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.15rem); color: var(--muted); letter-spacing: 0.06em; }
-    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3.5vw, 2.4rem); font-weight: 300; line-height: 1.4; color: var(--white); max-width: 640px; margin-bottom: 1.2rem; }
+    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3.5vw, 2.4rem); font-weight: 300; line-height: 1.4; color: var(--white); max-width: 640px; margin-bottom: 1.2rem; text-align: center; }
     .hero-tagline em { font-style: italic; color: var(--gold-light); }
-    .hero-sub { font-size: clamp(0.88rem, 1.5vw, 1rem); font-weight: 300; color: rgba(244,241,236,0.6); max-width: 480px; line-height: 1.8; margin-bottom: 2.8rem; }
+    .hero-sub { font-size: clamp(0.88rem, 1.5vw, 1rem); font-weight: 300; color: rgba(244,241,236,0.6); max-width: 480px; line-height: 1.8; margin-bottom: 2.8rem; text-align: center; }
     .hero-btn { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy-dark); background: var(--gold); padding: 1rem 2.2rem; border-radius: 3px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
     .hero-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
 
@@ -88,12 +88,12 @@
     .services-grid .flip-card:nth-child(5) { grid-column: 2; }
 
     /* FLIP CARDS */
-    .flip-card { perspective: 1000px; height: 300px; cursor: pointer; }
+    .flip-card { perspective: 1000px; height: 320px; cursor: pointer; }
     .flip-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); transform-style: preserve-3d; }
     .flip-card:hover .flip-inner, .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
     .flip-front, .flip-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 10px; padding: 1.8rem 1.6rem; display: flex; flex-direction: column; align-items: flex-start; }
     .flip-front { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.15); justify-content: flex-start; }
-    .flip-back { background: linear-gradient(135deg, rgba(201,168,76,0.14), rgba(201,168,76,0.04)); border: 1px solid rgba(201,168,76,0.38); transform: rotateY(180deg); justify-content: space-between; }
+    .flip-back { background: linear-gradient(135deg, rgba(201,168,76,0.14), rgba(201,168,76,0.04)); border: 1px solid rgba(201,168,76,0.38); transform: rotateY(180deg); justify-content: space-between; overflow: hidden; }
     .service-icon { width: 28px; height: 28px; color: var(--gold); margin-bottom: 1rem; flex-shrink: 0; }
     .service-name { font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.5rem; line-height: 1.3; }
     .service-badge { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy-dark); background: var(--gold); padding: 0.15rem 0.55rem; border-radius: 20px; margin-bottom: 0.5rem; }
@@ -101,7 +101,7 @@
     .flip-hint { font-size: 0.65rem; color: rgba(255,255,255,0.28); letter-spacing: 0.05em; margin-top: 0.6rem; }
     .flip-back-title { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
     .flip-list { list-style: none; padding: 0; margin: 0; flex: 1; }
-    .flip-list li { font-size: 0.78rem; font-weight: 300; color: rgba(244,241,236,0.82); line-height: 1.55; padding: 0.15rem 0 0.15rem 1rem; position: relative; }
+    .flip-list li { font-size: 0.76rem; font-weight: 300; color: rgba(244,241,236,0.82); line-height: 1.45; padding: 0.1rem 0 0.1rem 1rem; position: relative; }
     .flip-list li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); font-size: 0.48rem; top: 0.38rem; }
     .flip-cta { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 0.4rem 0.8rem; border-radius: 4px; text-decoration: none; text-align: center; width: 100%; margin-top: 0.8rem; transition: background 0.2s, color 0.2s; }
     .flip-cta:hover { background: var(--gold); color: var(--navy-dark); }
@@ -214,9 +214,9 @@
     <li><a href="#process">Process</a></li>
     <li><a href="#testimonials">Results</a></li>
     <li><a href="https://www.behance.net/alyssagustafson" target="_blank" rel="noopener">Portfolio</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="mailto:ag.cultivate@gmail.com">Contact</a></li>
   </ul>
-  <a href="mailto:ag.cultivate@gmail.com" class="nav-cta">Let's Talk</a>
+  <a href="/cdn-cgi/l/email-protection#78191f561b0d140c110e190c1d381f15191114561b1715" class="nav-cta">Let's Talk</a>
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -236,7 +236,7 @@
   <a href="#testimonials" onclick="closeMobileNav()">Results</a>
   <a href="https://www.behance.net/alyssagustafson" target="_blank" rel="noopener" onclick="closeMobileNav()">Portfolio</a>
   <a href="#contact" onclick="closeMobileNav()">Contact</a>
-  <a href="mailto:ag.cultivate@gmail.com" class="mobile-cta" onclick="closeMobileNav()">Let's Talk</a>
+  <a href="/cdn-cgi/l/email-protection#2746400944524b534e5146534267404a464e4b0944484a" class="mobile-cta" onclick="closeMobileNav()">Let's Talk</a>
 </div>
 
 <!-- HERO -->
@@ -247,7 +247,7 @@
   </div>
   <h1 class="hero-tagline">Before you rebrand, relaunch, or<br><em>spend another dollar on ads —</em></h1>
   <p class="hero-sub">Let's figure out what actually makes you different. Strategy-first brand consulting rooted in research, clarity, and direction you can act on.</p>
-  <a href="mailto:ag.cultivate@gmail.com" class="hero-btn">Start the Conversation</a>
+  <a href="/cdn-cgi/l/email-protection#d5b4b2fbb6a0b9a1bca3b4a1b095b2b8b4bcb9fbb6bab8" class="hero-btn">Start the Conversation</a>
 </section>
 
 <!-- ABOUT -->
@@ -271,8 +271,8 @@
           <div class="stat-label">Years of dedicated marketing strategy &amp; brand consulting</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">3.89</div>
-          <div class="stat-label">GPA · MS Information Design &amp; Strategy, Northwestern</div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Investment in every client's success — strategy that's built for you, not copied from a template</div>
         </div>
       </div>
     </div>
@@ -307,7 +307,7 @@
               <li>Initial positioning recommendations</li>
               <li>Recorded session + follow-up summary</li>
             </ul>
-            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Book Your Discovery Session</a>
+            <a href="/cdn-cgi/l/email-protection#c5a4a2eba6b0a9b1acb3a4b1a085a2a8a4aca9eba6aaa8" class="flip-cta">Book Your Discovery Session</a>
           </div>
         </div>
       </div>
@@ -331,7 +331,7 @@
               <li>Messaging guidelines</li>
               <li>Content strategy recommendations</li>
             </ul>
-            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Let's Build Your Foundation</a>
+            <a href="/cdn-cgi/l/email-protection#cdacaae3aeb8a1b9a4bbacb9a88daaa0aca4a1e3aea2a0" class="flip-cta">Let's Build Your Foundation</a>
           </div>
         </div>
       </div>
@@ -355,7 +355,7 @@
               <li>Implementation roadmap with priorities</li>
               <li>30-day follow-up consultation</li>
             </ul>
-            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Get the Complete Strategy</a>
+            <a href="/cdn-cgi/l/email-protection#bddcda93dec8d1c9d4cbdcc9d8fddad0dcd4d193ded2d0" class="flip-cta">Get the Complete Strategy</a>
           </div>
         </div>
       </div>
@@ -378,7 +378,7 @@
               <li>Content strategy direction</li>
               <li>Prioritized recommendations report</li>
             </ul>
-            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Start Your Analysis</a>
+            <a href="/cdn-cgi/l/email-protection#4425236a273128302d32253021042329252d286a272b29" class="flip-cta">Start Your Analysis</a>
           </div>
         </div>
       </div>
@@ -401,7 +401,7 @@
               <li>User flow &amp; conversion analysis</li>
               <li>Clear prioritized recommendations</li>
             </ul>
-            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Request Your Audit</a>
+            <a href="/cdn-cgi/l/email-protection#afcec881ccdac3dbc6d9cedbcaefc8c2cec6c381ccc0c2" class="flip-cta">Request Your Audit</a>
           </div>
         </div>
       </div>
@@ -467,7 +467,7 @@
     <span class="section-label reveal">Get In Touch</span>
     <h2 class="section-title reveal">Ready to find your <em>strategic edge?</em></h2>
     <p class="contact-sub reveal">Let's talk about where you are, where you want to go, and how strategy can get you there faster.</p>
-    <a href="mailto:ag.cultivate@gmail.com" class="contact-btn reveal">Send Me an Email</a>
+    <a href="/cdn-cgi/l/email-protection#2140460f42544d55485740554461464c40484d0f424e4c" class="contact-btn reveal">Send Me an Email</a>
   </div>
 </section>
 
@@ -490,7 +490,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // HAMBURGER
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
@@ -521,19 +521,4 @@
   });
 
   // SCROLL REVEAL - content visible by default, animate if observer works
-  const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    revealEls.forEach(el => el.classList.add('animate'));
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-    revealEls.forEach(el => observer.observe(el));
-  }
-</script>
-</body>
-</html>
+  const revealEls = document.qu
