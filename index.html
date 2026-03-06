@@ -163,13 +163,15 @@
 
     /* MOBILE ≤768px */
     @media (max-width: 768px) {
-      /* NAV — simple stacked links, no hamburger */
-      .nav-links { display: flex; flex-direction: column; gap: 0.4rem; }
-      .nav-links a { font-size: 0.65rem; }
+      /* NAV — hide top nav on mobile, use bottom bar instead */
+      .nav-links { display: none; }
       .nav-cta { display: none; }
       .hamburger { display: none; }
       .mobile-nav { display: none !important; }
+      /* BOTTOM NAV BAR */
+      .mobile-bottom-nav { display: flex; }
       .hero { padding: 6rem 6vw 4rem; }
+      body { padding-bottom: 70px; }
       .hero-wordmark { font-size: clamp(2.4rem, 11vw, 3.5rem); }
       .hero-tagline { font-size: clamp(1.3rem, 5vw, 1.8rem); }
       .section-inner { padding: 4rem 6vw; }
@@ -195,9 +197,73 @@
       .hero-wordmark { font-size: clamp(2rem, 12vw, 3rem); }
       .section-title { font-size: clamp(1.8rem, 7vw, 2.4rem); }
     }
-  </style>
+  
+    /* MOBILE BOTTOM NAV — hidden on desktop */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(21,30,43,0.97);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 0.5rem 0 calc(0.5rem + env(safe-area-inset-bottom));
+      justify-content: space-around;
+      align-items: center;
+    }
+    .mobile-bottom-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      padding: 0.3rem 0.5rem;
+    }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: var(--gold); }
+    .mobile-bottom-nav svg { width: 20px; height: 20px; stroke-width: 1.5; }
+    .mobile-bottom-nav .nav-email-btn {
+      background: var(--gold);
+      color: var(--navy-dark) !important;
+      border-radius: 50%;
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0;
+      margin-top: -1rem;
+      box-shadow: 0 4px 16px rgba(201,168,76,0.4);
+    }
+    .mobile-bottom-nav .nav-email-btn svg { width: 18px; height: 18px; }
+</style>
 </head>
 <body>
+<nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+  <a href="#about">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    About
+  </a>
+  <a href="#services">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    Services
+  </a>
+  <a href="mailto:ag.cultivate@gmail.com" class="nav-email-btn" aria-label="Email">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </a>
+  <a href="#process">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    Process
+  </a>
+  <a href="https://www.behance.net/alyssagustafson" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h7a3 3 0 010 6H3V6h6.5a3 3 0 010 6"/><path d="M14 8h7M14 13h7"/></svg>
+    Portfolio
+  </a>
+</nav>
+
 
 <!-- NAV -->
 <nav>
