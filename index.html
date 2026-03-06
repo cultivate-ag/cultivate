@@ -323,7 +323,7 @@ footer {
   .hero-tagline { font-size: clamp(1rem, 4.5vw, 1.3rem); margin-bottom: 1.5rem; }
   .hero-punch { font-size: clamp(0.9rem, 3.5vw, 1.05rem); margin-bottom: 2.2rem; text-align: center; width: 100%; }
   .hero-btn { width: 100%; max-width: 320px; text-align: center; padding: 1rem 1.5rem; }
-  .scroll-hint { left: 50%; transform: translateX(-50%); }
+  .scroll-hint { position: relative; bottom: unset; left: unset; transform: none; margin-top: 2rem; align-self: center; }
 
   /* Sections */
   .section-inner { padding: 4rem 6vw; }
@@ -416,7 +416,7 @@ footer {
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#process">Process</a></li>
-    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    <li><a href="mailto:ag.cultivate@gmail.com" class="nav-cta">Email Me</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -428,7 +428,7 @@ footer {
   <a href="#about" class="mobile-link">About</a>
   <a href="#services" class="mobile-link">Services</a>
   <a href="#process" class="mobile-link">Process</a>
-  <a href="#contact" class="mobile-cta mobile-link">Get in Touch</a>
+  <a href="mailto:ag.cultivate@gmail.com" class="mobile-cta mobile-link">Email Me</a>
 </div>
 
 <section class="hero" id="home">
@@ -438,7 +438,7 @@ footer {
   </div>
   <p class="hero-tagline" style="display:none"></p>
   <p class="hero-punch">Your brand has a story. <strong>Your marketing just isn’t showing it yet.</strong><br>Cultivate helps small businesses find the clarity their brand deserves.</p>
-  <a href="#contact" class="hero-btn">Start the Conversation</a>
+  <a href="mailto:ag.cultivate@gmail.com" class="hero-btn">Let's Work Together</a>
   <div class="scroll-hint">
     <span>Explore</span>
     <div class="scroll-line"></div>
@@ -559,7 +559,7 @@ footer {
     <p class="section-label reveal">Let’s Talk</p>
     <h2 class="section-title reveal reveal-delay-1">Ready to see<br><em>your story clearly?</em></h2>
     <p class="contact-sub reveal reveal-delay-2">Reach out by email and tell us a little about your business. We respond within 1–2 business days.</p>
-    <a href="/cdn-cgi/l/email-protection#3352541d50465f475a4552475673545e525a5f1d505c5e" class="contact-email-btn reveal reveal-delay-3">Send an Email</a>
+    <a href="mailto:ag.cultivate@gmail.com" class="contact-email-btn reveal reveal-delay-3">Send Me an Email</a>
   </div>
 </section>
 
@@ -614,12 +614,20 @@ footer {
           <path d="M12 13a2 2 0 0 1 4 0v3"/>
         </svg>
       </a>
+      <a href="https://www.behance.net/alyssagustafson" target="_blank" aria-label="Behance">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 6h7a3 3 0 0 1 0 6H2z"/>
+          <path d="M2 12h8a3 3 0 0 1 0 6H2z"/>
+          <line x1="14" y1="9" x2="22" y2="9"/>
+          <path d="M21 6c0-1.1-.9-2-2-2h-4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4c1.1 0 2-.9 2-2"/>
+        </svg>
+      </a>
     </div>
   </div>
   <p class="footer-copy">© 2026 Cultivate Consulting. All rights reserved.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
