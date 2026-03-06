@@ -388,6 +388,25 @@ footer {
 }
 
 /* ── MOBILE (≤768px) ── */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-grid .flip-card:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  /* Nav — tablet & mobile use hamburger */
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+
 @media (max-width: 768px) {
   /* Nav */
   .nav-links { display: none; }
@@ -407,6 +426,8 @@ footer {
   .section-inner { padding: 4rem 6vw; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .services-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 260px; }
+  .positioning-note { padding: 1rem 1.2rem; }
   .process-steps { grid-template-columns: 1fr; gap: 2rem; }
   .connector { display: none; }
 
@@ -499,11 +520,11 @@ footer {
     <li><a href="#process">Process</a></li>
     <li><a href="#testimonials">Results</a></li>
     <!-- ✦ NEW: Portfolio tab -->
-    <li><a href="https://www.behance.net/alyssagriffith4" target="_blank" rel="noopener">Portfolio</a></li>
+    <li><a href="https://www.behance.net/alyssagustafson" target="_blank" rel="noopener">Portfolio</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <!-- ✦ UPDATED: nav CTA opens email -->
-  <a href="mailto:ag.cultivate@gmail.com" class="nav-cta">Let's Talk</a>
+  <a href="/cdn-cgi/l/email-protection#78191f561b0d140c110e190c1d381f15191114561b1715" class="nav-cta">Let's Talk</a>
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -524,10 +545,10 @@ footer {
   <a href="#services" onclick="closeMobileNav()">Services</a>
   <a href="#process" onclick="closeMobileNav()">Process</a>
   <a href="#testimonials" onclick="closeMobileNav()">Results</a>
-  <a href="https://www.behance.net/alyssagriffith4" target="_blank" rel="noopener" onclick="closeMobileNav()">Portfolio</a>
+  <a href="https://www.behance.net/alyssagustafson" target="_blank" rel="noopener" onclick="closeMobileNav()">Portfolio</a>
   <a href="#contact" onclick="closeMobileNav()">Contact</a>
   <!-- ✦ UPDATED: mobile CTA opens email -->
-  <a href="mailto:ag.cultivate@gmail.com" class="mobile-cta" onclick="closeMobileNav()">Let's Talk</a>
+  <a href="/cdn-cgi/l/email-protection#2243450c41574e564b5443564762454f434b4e0c414d4f" class="mobile-cta" onclick="closeMobileNav()">Let's Talk</a>
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -543,7 +564,7 @@ footer {
   <p class="hero-tagline">Marketing that grows what matters.</p>
   <p class="hero-punch">Cultivate partners with <strong>mission-driven brands</strong> to build marketing strategy rooted in clarity, purpose, and measurable growth.</p>
   <!-- ✦ UPDATED: hero button opens email -->
-  <a href="mailto:ag.cultivate@gmail.com" class="hero-btn">Start the Conversation</a>
+  <a href="/cdn-cgi/l/email-protection#d1b0b6ffb2a4bda5b8a7b0a5b491b6bcb0b8bdffb2bebc" class="hero-btn">Start the Conversation</a>
   <div class="scroll-hint">
     <span>Explore</span>
     <div class="scroll-line"></div>
@@ -587,41 +608,129 @@ footer {
 <section class="services" id="services">
   <div class="section-inner">
     <div class="services-intro reveal">
-      <p class="section-label">What We Do</p>
-      <h2 class="section-title">Tailored strategy for <em>every stage</em></h2>
-      <p style="font-size:0.95rem;font-weight:300;color:rgba(255,255,255,0.65);line-height:1.8;">From full-cycle marketing plans to targeted content systems, every engagement is built around your specific goals, audience, and growth horizon.</p>
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Stop guessing. <em>Start with strategy.</em></h2>
+      <p style="font-size:1rem;font-weight:300;color:rgba(255,255,255,0.72);line-height:1.9;max-width:640px;margin:0 auto 1.5rem;">Before you redesign your website, launch another ad campaign, or rebrand — let's discover what actually makes you different.</p>
+      <p class="positioning-note reveal">"I don't design logos or build websites — I help you understand who you are and how to communicate it. You'll leave with strategic direction you can hand to any designer, developer, or marketing team with confidence."</p>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-        <div class="service-name">Marketing Strategy &amp; Planning</div>
-        <div class="service-desc">Comprehensive go-to-market plans, brand positioning, audience analysis, and channel strategy grounded in research and aligned to your mission.</div>
-        <div class="service-price">Starting at $1,500 · Project-based</div>
+
+      <!-- Card 1: Brand Discovery Session -->
+      <div class="service-card flip-card reveal">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <div class="service-name">Brand Discovery Session</div>
+            <div class="service-price">Custom Pricing · 90-Minute Deep-Dive</div>
+            <div class="flip-hint">Hover to learn more ↓</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-title">Brand Discovery Session</div>
+            <ul class="flip-list">
+              <li>90-minute strategic consultation</li>
+              <li>Competitive landscape overview</li>
+              <li>Initial positioning recommendations</li>
+              <li>Recorded session + follow-up summary document</li>
+            </ul>
+            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Book Your Discovery Session</a>
+          </div>
+        </div>
       </div>
-      <div class="service-card reveal reveal-delay-1">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
-        <div class="service-name">Content Strategy &amp; Systems</div>
-        <div class="service-desc">Editorial calendars, content frameworks, voice and tone guidelines, and platform-specific playbooks that make consistent storytelling sustainable.</div>
-        <div class="service-price">Starting at $800 · Project or retainer</div>
+
+      <!-- Card 2: Strategic Foundation -->
+      <div class="service-card flip-card reveal reveal-delay-1">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            <div class="service-name">Strategic Foundation</div>
+            <div class="service-badge">Most Popular</div>
+            <div class="service-price">Starting at $1,500 · Project-based</div>
+            <div class="flip-hint">Hover to learn more ↓</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-title">Strategic Foundation</div>
+            <ul class="flip-list">
+              <li>Competitive audit (5–10 competitors)</li>
+              <li>Customer research &amp; persona development</li>
+              <li>Brand positioning framework</li>
+              <li>Messaging guidelines</li>
+              <li>Content strategy recommendations</li>
+            </ul>
+            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Let's Build Your Foundation</a>
+          </div>
+        </div>
       </div>
-      <div class="service-card reveal reveal-delay-1">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-        <div class="service-name">Social Media Strategy</div>
-        <div class="service-desc">Platform audits, growth strategy, engagement frameworks, and analytics interpretation — built to grow your audience without burning out your team.</div>
-        <div class="service-price">Starting at $600 · Audit or retainer</div>
+
+      <!-- Card 3: Comprehensive Brand Strategy -->
+      <div class="service-card flip-card reveal reveal-delay-2">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <div class="service-name">Comprehensive Brand Strategy</div>
+            <div class="service-price">Starting at $2,500 · Full Package</div>
+            <div class="flip-hint">Hover to learn more ↓</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-title">Comprehensive Brand Strategy</div>
+            <ul class="flip-list">
+              <li>Everything in Strategic Foundation, plus:</li>
+              <li>In-depth customer interviews</li>
+              <li>SEO keyword research &amp; strategy</li>
+              <li>Content calendar framework</li>
+              <li>Implementation roadmap with priorities</li>
+              <li>30-day follow-up consultation</li>
+            </ul>
+            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Get the Complete Strategy</a>
+          </div>
+        </div>
       </div>
-      <div class="service-card reveal reveal-delay-2">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/></svg>
-        <div class="service-name">Brand Positioning &amp; Messaging</div>
-        <div class="service-desc">Clarify who you are, who you're for, and why it matters. We develop messaging hierarchies and positioning frameworks that resonate and endure.</div>
-        <div class="service-price">Starting at $1,200 · Project-based</div>
+
+      <!-- Card 4: Full Marketing Analysis for Branding -->
+      <div class="service-card flip-card reveal reveal-delay-3">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+            <div class="service-name">Full Marketing Analysis for Branding</div>
+            <div class="service-price">Starting at $1,200 · Project-based</div>
+            <div class="flip-hint">Hover to learn more ↓</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-title">Full Marketing Analysis for Branding</div>
+            <ul class="flip-list">
+              <li>Competitive audit &amp; market landscape review</li>
+              <li>Customer persona development</li>
+              <li>Brand positioning analysis</li>
+              <li>Content strategy direction</li>
+              <li>Prioritized recommendations report</li>
+            </ul>
+            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Start Your Analysis</a>
+          </div>
+        </div>
       </div>
-      <div class="service-card reveal reveal-delay-3">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
-        <div class="service-name">Website Marketing Audit</div>
-        <div class="service-desc">A focused review of your website through a marketing lens — evaluating messaging clarity, SEO foundations, calls to action, user flow, and conversion opportunities. You'll receive a clear, prioritized report with actionable recommendations.</div>
-        <div class="service-price">$100 – $150 · Flat rate</div>
+
+      <!-- Card 5: Website Marketing Audit -->
+      <div class="service-card flip-card reveal reveal-delay-3">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <div class="service-name">Website Marketing Audit</div>
+            <div class="service-price">$100 – $150 · Flat Rate</div>
+            <div class="flip-hint">Hover to learn more ↓</div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-title">Website Marketing Audit</div>
+            <ul class="flip-list">
+              <li>Messaging clarity review</li>
+              <li>SEO foundations check</li>
+              <li>Calls-to-action evaluation</li>
+              <li>User flow &amp; conversion analysis</li>
+              <li>Clear prioritized recommendations report</li>
+            </ul>
+            <a href="mailto:ag.cultivate@gmail.com" class="flip-cta">Request Your Audit</a>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -705,7 +814,7 @@ footer {
     <h2 class="section-title reveal reveal-delay-1">Ready to <em>grow</em> something?</h2>
     <p class="contact-sub reveal reveal-delay-2">Whether you have a clear brief or just a feeling that something needs to shift, let's talk. Every great strategy starts with a conversation.</p>
     <!-- ✦ UPDATED: contact button opens email -->
-    <a href="mailto:ag.cultivate@gmail.com" class="contact-email-btn reveal reveal-delay-3">Send Me an Email</a>
+    <a href="/cdn-cgi/l/email-protection#4e2f29602d3b223a27382f3a2b0e29232f2722602d2123" class="contact-email-btn reveal reveal-delay-3">Send Me an Email</a>
   </div>
 </section>
 
@@ -736,7 +845,7 @@ footer {
         </svg>
       </a>
       <!-- ✦ NEW: Behance icon -->
-      <a href="https://www.behance.net/alyssagriffith4" target="_blank" rel="noopener" aria-label="Behance Portfolio">
+      <a href="https://www.behance.net/alyssagustafson" target="_blank" rel="noopener" aria-label="Behance Portfolio">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M3 9h8a3 3 0 010 6H3V6h7a3 3 0 010 6"/>
           <path d="M14 9h7M14 14.5h7"/>
@@ -748,7 +857,7 @@ footer {
   <p class="footer-copy">&copy; 2025 Cultivate. All rights reserved.</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── HAMBURGER / MOBILE NAV ──────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
@@ -797,6 +906,13 @@ const titleEl = document.getElementById('authorTitle');
 const cardEl = document.getElementById('testimonialCard');
 const dots = document.querySelectorAll('.dot');
 
+// Flip cards — tap to flip on touch devices
+document.querySelectorAll('.flip-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
+});
+
 // Hide controls when only 1 testimonial
 if (testimonials.length <= 1) {
   const controls = document.querySelector('.carousel-controls');
@@ -812,12 +928,4 @@ function goTo(idx) {
     titleEl.textContent = testimonials[current].title;
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
     cardEl.style.opacity = '1';
-  }, 200);
-}
-
-document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
-document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
-dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.index)));
-</script>
-</body>
-</html>
+  },
